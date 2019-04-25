@@ -1,15 +1,14 @@
-// Code to add a Header component for the ToDo App
+// Component file to work out how many tasks there are that need to be done for the ToDo App
 
 import React, {Component } from 'react';
 
-class AppHeader extends Component {
+class TaskTally extends Component {
 
     render () {
         return (
-        
-                    <h1><b>My To Do Application</b></h1>
-            
-          
+            <div>
+                <h4>THINGS TO DO: 2</h4>
+            </div>
     // Example code from class 
             // <div className="row addTaskRow">
             //     <div className="col-8">
@@ -23,4 +22,4 @@ class AppHeader extends Component {
         );
     }
 }
-export default AppHeader;
+export default TaskTally;

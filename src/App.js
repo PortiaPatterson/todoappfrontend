@@ -1,38 +1,47 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// These files are imported from the components folder
+import AppHeader from './Components/AppHeader';
+import NewTask from './Components/NewTask';
+import ExistingTasks from './Components/ExistingTasks';
+import TaskTally from './Components/TaskTally';
+//This file is the CSS styling file that holds all the formatting details
 import './App.css';
 
-// this file, Header.js is imported from the components folder
-import Header from './Components/Header';
+
+
 
 class App extends Component {
   render() {
 
-    const headers = ["Header 1", "Header 2", "Header 3"];
-
-    // The file that we just imported from the Component folder is used here:
-     
-    // You can add more headers but you must encapsulate them within 1 element like a div eg
-    // <div>
-    //   <Header headerText="To do App"/>
-    //   <Header headerText="Geoff"/>
-    //   <Header headerText="Susan"/>
-    //   <Header headerText="Hello"/>
-    // </div>
-
-    // The code below is a more efficient way to do the code above.
-
     return (
+    // This brings in the Bootstrap and App.css style stuff
+       <div id ="div1" className="container">
 
-      // This brings in the Bootstrap stuff
-      
-    <div className="container">
-      { 
-        headers.map(function(header, index) {
-          return <Header headerText={header} key={index} />;
-        })
-      }
-    </div>
+          <div className="row div2">
+            <div className="col-sm-12">
+              <AppHeader />
+            </div>
+          </div>
+
+          <div className="row div2">
+              <div className="col-sm-12">
+                <NewTask />
+              </div>
+            </div>
+
+            <div className="row div2">
+              <div class="col-sm-12">
+               <TaskTally />
+              </div>
+            </div>
+
+            <div className="row div2">
+              <div className="col-sm-12">
+                <ExistingTasks />
+              </div>
+            </div>
+
+       </div>
     );
   }
 }
