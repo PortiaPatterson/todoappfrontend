@@ -1,11 +1,11 @@
-// Example code for how you might do a new component for the ToDo App
-
+// Code to do a Task Component for the ToDo App
 import react, {Component } from 'react';
 
-class AddTask extends Component {
+class addTask extends Component {
 
     render () {
         return (
+           
             <div className="row addTaskRow">
                 <div className="col-8">
                     <input type="text" />

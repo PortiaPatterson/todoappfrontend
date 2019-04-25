@@ -1,8 +1,37 @@
-.App {
-  text-align: center;
+/* CSS formatting work for TODOAPP copied from original Styles.css file from week-002-html folder
+*/
+/* Style the Headers like this */
+h1 {
+  /* color:white; */
+  /* fonst-size:10vw; */
+  font-family: Courier, monospace;
+}
+h3 {
+  /* color:white; */
+  /* font-size:3vw; */
+  font-family: Courier, monospace;
+}
+/* Style the font family for the whole page like this */
+body {
+  background-color: grey;
+  font-family: Courier, monospace;
+  color:white;
 }
 
-.App-logo {
+.div2 {
+  border: 2px solid white;
+  /* margin: 8px auto 0 auto; */
+  /* font-size:2vw; */
+  /* Padding is used to give space between the text and the border */
+  padding: 20px;  
+  width:350px;
+  text-align: center;
+}
+/* Example CSS styling from lesson */
+/* .App {
+  text-align: center;
+} */
+/* .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
@@ -30,4 +59,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
