@@ -17,7 +17,14 @@ body {
   font-family: Courier, monospace;
   color:white;
 }
+/* Defining the Div sections */
+/* Defining a div id; this should only be used once in your code */
+#div1{
+  width:400px;
+  text-align: center;
+}
 
+/* Defining a div class */
 .div2 {
   border: 2px solid white;
   /* margin: 8px auto 0 auto; */
@@ -27,7 +34,40 @@ body {
   width:350px;
   text-align: center;
 }
-/* Example CSS styling from lesson */
+
+/* Defining an id that will only be used to display the document across different device sizes  */
+.my-div{
+  border: 3px solid white;
+  /* font-size:2vw; */
+  /* Margin is used to centre the DIV section on the page */
+  margin: 10px auto 0 auto ;
+  width:400px;
+  text-align: center;
+}
+
+/* This text will change your background colour dependent on 
+whether or not the screen size goes up to 600pixels */
+@media only screen and (max-width: 400px){
+  body {
+      background-color:white;
+  }
+  /* This changes how a particular div section looks */
+  #div1 {
+      border: 2px solid grey;
+      background-color:white;
+      /* font-weight: bold; */
+      color: grey;
+  }
+  .my-div{
+      border: 3px solid grey;
+      color:grey;
+      font-weight: bold; 
+      margin: 10px auto 0 auto ;
+      width:400px;
+      text-align: center;
+  }
+}
+/* Example CSS styling from inital React lesson */
 /* .App {
   text-align: center;
 } */
