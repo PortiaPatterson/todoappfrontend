@@ -8,9 +8,18 @@ import TaskTally from './Components/TaskTally';
 import './App.css';
 
 
-
-
 class App extends Component {
+// this code allows the New Task details added in the NewTask component to be displayed here
+state = {
+  tasks:[]
+}
+
+newTask(newTaskText) {
+  let existingTaskList = this.state.tasks;
+  existingTaskList.push(newTaskText);
+  this.setState({tasks: existingTaskList});
+}
+
   render() {
 
     return (
@@ -25,7 +34,9 @@ class App extends Component {
         </div>
         <div className=" row div2">
           <div className="col-sm-12">
-            <NewTask />
+      {/* This is taking the value from the text entered in the text box, 
+      it's also in NewTask component file */}
+            <NewTask newTaskProp={this.newTask.bind(this)}/>
           </div>
         </div>
 
