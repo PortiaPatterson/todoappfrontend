@@ -22,7 +22,7 @@ taskTextChanged = (event) => {
 // As it's a prop the details don't change, they're only passed, newTaskProp
 
 newTaskButtonClicked = () => {
-    alert('This saves the Task Details just entered ${this.state.newTaskText}');
+    alert(`This saves the task detail you entered ${this.state.newTaskText}`);
  }
 
     render() {
