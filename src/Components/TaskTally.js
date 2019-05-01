@@ -7,7 +7,7 @@ class TaskTally extends Component {
     render () {
         return (
             <div>
-                <h4>There are {this.props.taskTally} to do.</h4>
+                <h4>There are {this.props.taskTally} Tasks to do.</h4>
             </div>
     // Example code from class 
             // <div className="row addTaskRow">

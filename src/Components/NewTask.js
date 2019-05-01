@@ -19,10 +19,11 @@ taskTextChanged = (event) => {
 
 // This is a function that When the button Add New Task is clicked, passes the details 
 // from newTaskText variable to the newTaskFunction in the App.js file, it also gives an alert to screen
-// As it's a prop the details don't change, they're only passed, newTaskProp
+// As it's a prop the details don't change, they're only passed
 
 newTaskButtonClicked = () => {
-    alert(`This saves the task detail you entered ${this.state.newTaskText}`);
+    // alert(`This saves the task detail you entered ${this.state.newTaskText}`);
+    this.props.newTaskFunction(this.state.newTaskText);
  }
 
     render() {
