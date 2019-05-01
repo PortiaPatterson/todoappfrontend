@@ -14,34 +14,33 @@ class App extends Component {
   render() {
 
     return (
-    // This brings in the Bootstrap and App.css style stuff
-       <div id ="div1" className="container">
+      // This brings in the Bootstrap and App.css style stuff, the text in turquoise between the div 
+      //sections is the individual component files that are being called eg AppHeader
+      <div id="div1" className="container">
 
-          <div className="row div2">
-            <div className="col-sm-12">
-              <AppHeader />
-            </div>
+        <div className="row div2">
+          <div className="col-sm-12">
+            <AppHeader />
           </div>
+        </div>
+        <div className=" row div2">
+          <div className="col-sm-12">
+            <NewTask />
+          </div>
+        </div>
 
-          <div className="row div2">
-              <div className="col-sm-12">
-                <NewTask />
-              </div>
-            </div>
+        <div className="row div2">
+          <div class="col-sm-12">
+            <TaskTally />
+          </div>
+        </div>
 
-            <div className="row div2">
-              <div class="col-sm-12">
-               <TaskTally />
-              </div>
-            </div>
-
-            <div className="row div2">
-              <div className="col-sm-12">
-                <ExistingTasks />
-              </div>
-            </div>
-
-       </div>
+        <div className="row div2">
+          <div className="col-sm-12">
+            <ExistingTasks />
+          </div>
+        </div>         
+      </div >
     );
   }
 }

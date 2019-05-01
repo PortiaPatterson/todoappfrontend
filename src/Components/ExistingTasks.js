@@ -7,13 +7,14 @@ class ExistingTasks extends Component {
         return (
             <div>
                 <p><b>A FIRST TASK</b>
-                    <input type="submit" value="DONE" />
-                    <input type="submit" value="DELETE" />
+                    <input type="submit" value="DONE"/>
+                    <input type="submit" value="DEL" />
                 </p>
+                    
                 <p><b>A SECOND TASK</b>
                     <input type="submit" value="DONE" />
-                    <input type="submit" value="DELETE" />
-                </p>
+                    <input type="submit" value="DEL" />
+                </p> 
 
             </div>
         );

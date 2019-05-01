@@ -20,32 +20,43 @@ body {
 /* Defining the Div sections */
 /* Defining a div id; this should only be used once in your code */
 #div1{
+  border: 2px solid white; 
   width:400px;
-  margin-top:40px;
+  margin-top:10px; 
   text-align: center;
 }
 
 /* Defining a div class */
 .div2 {
   border: 2px solid white;
-  /* margin: 8px auto 0 auto; */
-  /* font-size:2vw; */
   /* Padding is used to give space between the text and the border */
-  padding: 20px;  
-  width:350px;
-  text-align: center;
+  padding-top:20px; 
+  padding-bottom: 20px;  
+  /* font-size:2vw; */
+  width:400px;
+  text-align: centre; 
 }
 
 /* Defining an id that will only be used to display the document across different device sizes  */
 .my-div{
-  border: 3px solid white;
+  border: 2px solid white;
   /* font-size:2vw; */
   /* Margin is used to centre the DIV section on the page */
   margin: 10px auto 0 auto ;
-  width:400px;
+  width:440px;
   text-align: center;
 }
 
+/* This div determines how the will display */
+/* .button-div{
+  border: 2px solid white;
+  color:red;
+  font-weight: bold; 
+  /* margin-right: 100px;
+  margin-left:100px; */
+  /* width:350px; */
+  /* text-align: center; */
+/*  */
 /* This text will change your background colour dependent on 
 whether or not the screen size goes up to 600pixels */
 @media only screen and (max-width: 400px){
@@ -67,6 +78,16 @@ whether or not the screen size goes up to 600pixels */
       width:400px;
       text-align: center;
   }
+
+  /* .button-div{
+    border: px solid white;
+    color:red;
+    font-weight: bold; 
+    /* margin-right: 100px;
+    margin-left:100px; */
+    /* width:40px; */
+    /* text-align: center; */
+  /*  */
 }
 /* Example CSS styling from inital React lesson */
 /* .App {
