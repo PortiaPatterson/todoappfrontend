@@ -10,17 +10,26 @@ import './App.css';
 
 class App extends Component {
 // this code allows the New Task details added in the NewTask component to be displayed here
-state = {
-  tasks:[]
-}
+// state = {
+//   tasks:[]
+// }
 
-newTask(newTaskText) {
-  let existingTaskList = this.state.tasks;
-  existingTaskList.push(newTaskText);
-  this.setState({tasks: existingTaskList});
-}
+// newTask(newTaskText) {
+//   let existingTaskList = this.state.tasks;
+//   existingTaskList.push(newTaskText);
+//   this.setState({tasks: existingTaskList});
+// }
+
 
   render() {
+    
+    const tasks =[
+      "Buy milk",
+      "Buy bread",
+      "Pickup newspaper",
+      "Walk the dog",
+      "Do homework"
+    ]
 
     return (
       // This brings in the Bootstrap and App.css style stuff, the text in turquoise between the div 
@@ -34,28 +43,38 @@ newTask(newTaskText) {
         </div>
         <div className=" row div2">
           <div className="col-sm-12">
+          <NewTask />
       {/* This is taking the value from the text entered in the text box, 
       it's also in NewTask component file */}
-            <NewTask newTaskFunction={this.newTask.bind(this)}/>
+            {/* <NewTask newTaskFunction={this.newTask.bind(this)}/> */}
           </div>
         </div>
 
         <div className="row div2">
           <div class="col-sm-12">
-            <TaskTally taskTally = {this.state.tasks.length} />
+            {/* <TaskTally taskTally = {this.state.tasks.length} /> */}
           </div>
         </div>
 
-        <div className="row div2">
-          <div className="col-sm-12">
-          {
-
+        {/* <div className="row div2">
+          <div className="col-sm-12"> */}
+          {/* <ExistingTasks existingTaskList="Buy milk" />
+          <ExistingTasks existingTaskList="Buy bread" />
+          <ExistingTasks existingTaskList="Pickup newspaper" />
+          <ExistingTasks existingTaskList="Walk dog" /> */}
+          {/* {
+// this is wrong, not sure where and what is happening here
           this.state.tasks.map(function(item, index) {
-              return<ExistingTasks  taskDetails = {item} key = {index} />
+              return<ExistingTasks  existingTaskList = {item} key = {index} />
              })
-          }
-          </div>
-        </div>         
+          } */}
+          {/* </div>
+        </div>          */}
+        {          
+          tasks.map(function(item, index){
+            return <ExistingTasks existingTaskList={item} key={index} />
+          })
+        }
       </div >
     );
   }

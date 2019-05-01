@@ -5,16 +5,17 @@ class ExistingTasks extends Component {
 
     render() {
         return (
-            <div>
-                <p><b>A FIRST TASK</b>
-                    <input type="submit" value="DONE"/>
-                    <input type="submit" value="DEL" />
-                </p>
-                    
-                <p><b>A SECOND TASK</b>
-                    <input type="submit" value="DONE" />
-                    <input type="submit" value="DEL" />
-                </p> 
+            <div className="row">
+                <div className="col-sm-12 col-md-8">
+                {/* this displays any task details given */}
+                        {this.props.existingTaskList}
+                </div>
+                <div className="col-sm-6 col-md-2">
+                    <button type="button">DONE</button>
+                </div>
+                <div className="col-sm-6 col-md-2" >
+                    <button type="button">DELETE</button>
+                </div>
 
             </div>
         );

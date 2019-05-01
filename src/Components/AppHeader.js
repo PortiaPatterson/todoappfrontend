@@ -8,17 +8,6 @@ class AppHeader extends Component {
         return (
         
                     <h1><b>My To Do Application</b></h1>
-            
-          
-    // Example code from class 
-            // <div className="row addTaskRow">
-            //     <div className="col-8">
-            //         <input type="text" />
-            //         </div>
-            //     <div className="col-4">
-            //         <input type="button" value ="Add"/>        
-            //         </div>
-            //     </div>
 
         );
     }
