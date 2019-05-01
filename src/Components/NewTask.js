@@ -20,7 +20,7 @@ onTaskTextChanged = (event) => {
 // newTaskFunction in the App.js file. As it's a prop the details don't change, they're only passed,
 // newTaskProp
 onTaskAddedClicked = () => {
-   this.props.newTaskProp(this.state.newTaskText);
+   this.props.newTaskFunction(this.state.newTaskText);
 
  }
 

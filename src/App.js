@@ -36,19 +36,24 @@ newTask(newTaskText) {
           <div className="col-sm-12">
       {/* This is taking the value from the text entered in the text box, 
       it's also in NewTask component file */}
-            <NewTask newTaskProp={this.newTask.bind(this)}/>
+            <NewTask newTaskFunction={this.newTask.bind(this)}/>
           </div>
         </div>
 
         <div className="row div2">
           <div class="col-sm-12">
-            <TaskTally />
+            <TaskTally taskTally = {this.state.tasks.length} />
           </div>
         </div>
 
         <div className="row div2">
           <div className="col-sm-12">
-            <ExistingTasks />
+          {
+
+          this.state.tasks.map(function(item, index) {
+              return<ExistingTasks  taskDetails = {item} key = {index} />
+             })
+          }
           </div>
         </div>         
       </div >
