@@ -36,10 +36,9 @@ newTask(newTaskText) {
         </div>
         <div className=" row div2">
           <div className="col-sm-12">
-          <NewTask />
       {/* This is taking the value from the text entered in the text box, 
       it's also in NewTask component file */}
-            <NewTask newTaskFunction={this.newTaskText.bind(this)}/> 
+            <NewTask newTaskFunction={this.newTask.bind(this)}/> 
           </div>
         </div>
 
@@ -50,18 +49,13 @@ newTask(newTaskText) {
         </div>
 
          {
-        // this is wrong, not sure where and what is happening here
+        // this is looping through the array 'tasks' created in 'state' at the top and then returning
+        // the tasks line by line so we can see them
           this.state.tasks.map(function(item, index) {
               return<ExistingTasks  existingTaskList = {item} key = {index} />
              })
-          } */}
-          {/* </div>
-        </div>          */}
-        {          
-          tasks.map(function(item, index){
-            return <ExistingTasks existingTaskList={item} key={index} />
-          })
-        }
+          } 
+          
       </div >
     );
   }
