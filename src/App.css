@@ -13,8 +13,9 @@ h3 {
 }
 /* Style the font family for the whole page like this */
 body {
-  background-color:rgb(0, 17, 255);
-  /* rgb(0, 17, 255) */
+  background-color:rgb(45, 97, 240);
+  /* rgb(49, 101, 245) */
+  /* rgb(6, 131, 248) */
   font-family: Courier, monospace;
   color:white;
 }
@@ -23,7 +24,7 @@ body {
 #div1{
   border: 2px solid white; 
   width:400px;
-  margin-top:10px; 
+  margin-top:30px; 
   text-align: center;
 }
 
@@ -40,24 +41,20 @@ body {
 
 /* Defining an id that will only be used to display the document across different device sizes  */
 .my-div{
-  border: 2px solid white;
+  border: 1px solid white;
   /* font-size:2vw; */
   /* Margin is used to centre the DIV section on the page */
-  margin: 10px auto 0 auto ;
-  width:440px;
+  /* margin: 10px auto 0 auto ; */
+  padding-top:20px;
+  width:400px;
   text-align: center;
 }
 
-/* This div determines how the will display */
-/* .button-div{
-  border: 2px solid white;
-  color:red;
-  font-weight: bold; 
-  /* margin-right: 100px;
-  margin-left:100px; */
-  /* width:350px; */
-  /* text-align: center; */
-/*  */
+/* aligns any text to the left */
+.myleft-div{
+  text-align: left;
+}
+
 /* This text will change your background colour dependent on 
 whether or not the screen size goes up to 600pixels */
 @media only screen and (max-width: 400px){
@@ -66,14 +63,14 @@ whether or not the screen size goes up to 600pixels */
   }
   /* This changes how a particular div section looks */
   #div1 {
-      border: 2px solid grey;
+      border: 2px solid rgb(45, 97, 240)y;
       background-color:white;
       /* font-weight: bold; */
-      color: grey;
+      color: rgb(45, 97, 240);
   }
   .my-div{
-      border: 3px solid grey;
-      color:grey;
+      border: 3px solid rgb(45, 97, 240)rey;
+      color:rgb(45, 97, 240);
       font-weight: bold; 
       margin: 10px auto 0 auto ;
       width:400px;
