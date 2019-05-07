@@ -50,28 +50,7 @@ class App extends Component {
     } 
     // creates a function that completes a particular task when it's been 
     // clicked on the ExistingTask component
-      completeTask = (taskId) => {
-        // by adding slice at the end you get to create a copy of the existing array of records
-      const completeTaskList = this.state.tasks.slice();
-      const taskindex = 
-
-      const compFiltTask = completeTaskList.find(function (item, index){
-        
-        return item.id == taskId
-
-        // text-decoration; line-through;
-      });
-      // you get a boolean value from this 
-      const shouldComplete = window.confirm("You are about to complete this record: " + compFiltTask.currentTaskDescr )
-      if (shouldComplete === true){ 
-        compFiltTask.complete = true;
-      }
-// you need to somehow update the completeTaskList to now have the completed record
-completedTaskList[]= compFiltTask
-      this.setState({
-        tasks: completeTaskList
-      });
-    }
+      //
 
   render() {
 
@@ -106,7 +85,8 @@ completedTaskList[]= compFiltTask
           // could be given any name like footPatrol, so 'this' takes the value of whatever particular thing
           // you are doing
           this.state.tasks.map( (item, index) => {
-            return <ExistingTasks task={item} key={index} deleteTask={this.deleteTask} completeTask={this.completeTask} />
+            return <ExistingTasks task={item} key={index} deleteTask={this.deleteTask} //completeTask={this.completeTask} 
+            />
         })
         }
 

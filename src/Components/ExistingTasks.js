@@ -15,7 +15,8 @@ class ExistingTasks extends Component {
                 {/* this passes the id of the record to be completed to the completeTask function 
                 on the App.js.NOTE THE onClick is done in 1 go instead of going to another function to send 
                 the details to the App.js file as is done on the NewTask component. This way is neater */}
-                    <button type="button" onClick={() => this.props.completeTask(this.props.task.id)}>DONE</button>
+                    <button type="button" //onClick={() => this.props.completeTask(this.props.task.id)}
+                    >DONE</button>
                 </div>
                 <div className="col-sm-6 col-md-3" >
                 {/* this will take the id value from the task chosen to be deleted and 
