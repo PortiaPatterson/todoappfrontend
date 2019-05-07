@@ -51,6 +51,19 @@ class App extends Component {
     // creates a function that completes a particular task when it's been 
     // clicked on the ExistingTask component
       //
+      completeTask = (taskId) => {
+        const compTaskList = this.state.tasks;
+    
+        const compFiltTask = compTaskList.filter(function (item, index) {
+          return item.id == taskId;
+        });
+        compFiltTask.complete = true;
+        this.setState({
+          tasks: compFiltTask
+        });
+      } 
+    }
+    
 
   render() {
 
@@ -74,7 +87,7 @@ class App extends Component {
         </div>
 
         <div className="row div2">
-          <div class="col-sm-12">
+          <div className="col-sm-12">
             <TaskTally taskTally={this.state.tasks.length} />
           </div>
         </div>
@@ -87,12 +100,12 @@ class App extends Component {
           this.state.tasks.map( (item, index) => {
             return <ExistingTasks task={item} key={index} deleteTask={this.deleteTask} //completeTask={this.completeTask} 
             />
-        })
+        });
         }
 
       </div>
-    );
+    )
   }
-}
+
 
 export default App;
