@@ -6,25 +6,77 @@ import ExistingTasks from './Components/ExistingTasks';
 import TaskTally from './Components/TaskTally';
 //This file is the CSS styling file that holds all the formatting details
 import './App.css';
-
+// file imported so that you can use someone else's code to create a unique id
+import uuidv1 from 'uuid/v1';
+import { PassThrough } from 'stream';
 
 class App extends Component {
-// this code allows the New Task details added in the NewTask component to be displayed here
-state = {
-  tasks:[]
-}
-
-newTask(newTaskText) {
-  let existingTaskList = this.state.tasks;
-  existingTaskList.push(newTaskText);
-  this.setState({tasks: existingTaskList});
-}
-
-
-  render() {
+  // this code allows the New Task details added in the NewTask component to be displayed here
+  state = {
+    tasks: []
+  }
+// this is how to define a function using lastest methodology ES6, and it maintainss a link to ther term
+// 'this' so it is defined
+  newTask = (newTaskText) => {
+    let existingTaskList = this.state.tasks;
     
 
-    return (
+    // this allows us to hold a unique number for each task
+    const taskId = uuidv1();
+
+    // this 
+    const currentTask = {
+      currentTaskDescr: newTaskText,
+      id: taskId,
+      completed: false
+    };
+
+    existingTaskList.push(currentTask);
+
+    this.setState({ tasks: existingTaskList });
+  }
+
+  // creates a function to delete a particular task
+    deleteTask = (taskId) => {
+    const currentTaskList = this.state.tasks;
+
+    const filteredTask = currentTaskList.filter(function (item, index) {
+      return item.id !== taskId;
+    });
+
+    this.setState({
+      tasks: filteredTask
+    });
+    } 
+    // creates a function that completes a particular task when it's been 
+    // clicked on the ExistingTask component
+      completeTask = (taskId) => {
+        // by adding slice at the end you get to create a copy of the existing array of records
+      const completeTaskList = this.state.tasks.slice();
+      const taskindex = 
+
+      const compFiltTask = completeTaskList.find(function (item, index){
+        
+        return item.id == taskId
+
+        // text-decoration; line-through;
+      });
+      // you get a boolean value from this 
+      const shouldComplete = window.confirm("You are about to complete this record: " + compFiltTask.currentTaskDescr )
+      if (shouldComplete === true){ 
+        compFiltTask.complete = true;
+      }
+// you need to somehow update the completeTaskList to now have the completed record
+completedTaskList[]= compFiltTask
+      this.setState({
+        tasks: completeTaskList
+      });
+    }
+
+  render() {
+
+
+    return ( 
       // This brings in the Bootstrap and App.css style stuff, the text in turquoise between the div 
       //sections is the individual component files that are being called eg AppHeader
       <div id="div1" className="container">
@@ -36,27 +88,29 @@ newTask(newTaskText) {
         </div>
         <div className=" row div2">
           <div className="col-sm-12">
-      {/* This is taking the value from the text entered in the text box, 
+            {/* This is taking the value from the text entered in the text box, 
       it's also in NewTask component file */}
-            <NewTask newTaskFunction={this.newTask.bind(this)}/> 
+            <NewTask newTaskFunction = {this.newTask} />
           </div>
         </div>
 
         <div className="row div2">
           <div class="col-sm-12">
-            <TaskTally taskTally = {this.state.tasks.length} />
+            <TaskTally taskTally={this.state.tasks.length} />
           </div>
         </div>
 
-         {
-        // this is looping through the array 'tasks' created in 'state' at the top and then returning
-        // the tasks line by line so we can see them
-          this.state.tasks.map(function(item, index) {
-              return<ExistingTasks  existingTaskList = {item} key = {index} />
-             })
-          } 
-          
-      </div >
+        {
+          // this is looping through the array 'tasks' created in 'state' at the top and then returning
+          // the tasks line by line so we can see them. So 'task' is an individual instance of each record
+          // could be given any name like footPatrol, so 'this' takes the value of whatever particular thing
+          // you are doing
+          this.state.tasks.map( (item, index) => {
+            return <ExistingTasks task={item} key={index} deleteTask={this.deleteTask} completeTask={this.completeTask} />
+        })
+        }
+
+      </div>
     );
   }
 }
