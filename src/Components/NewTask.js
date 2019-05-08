@@ -23,8 +23,8 @@ taskTextChanged = (event) => {
 
 newTaskButtonClicked = () => {
     // alert(`This saves the task detail you entered ${this.state.newTaskText}`);
-    this.props.newTaskFunction(this.state.newTaskText);
- }
+    this.props.newTaskFunction(this.state.newTaskText)
+ };
 
     render() {
 

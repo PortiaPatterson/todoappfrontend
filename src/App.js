@@ -15,11 +15,11 @@ class App extends Component {
   state = {
     tasks: []
   }
-// this is how to define a function using lastest methodology ES6, and it maintainss a link to ther term
-// 'this' so it is defined
+  // this is how to define a function using lastest methodology ES6, and it maintainss a link to ther term
+  // 'this' so it is defined
   newTask = (newTaskText) => {
     let existingTaskList = this.state.tasks;
-    
+
 
     // this allows us to hold a unique number for each task
     const taskId = uuidv1();
@@ -37,7 +37,7 @@ class App extends Component {
   }
 
   // creates a function to delete a particular task
-    deleteTask = (taskId) => {
+  deleteTask = (taskId) => {
     const currentTaskList = this.state.tasks;
 
     const filteredTask = currentTaskList.filter(function (item, index) {
@@ -47,68 +47,70 @@ class App extends Component {
     this.setState({
       tasks: filteredTask
     });
-    } 
-    // creates a function that completes a particular task when it's been 
-    // clicked on the ExistingTask component
-      //
-      // completeTask = (taskId) => {
-      //   const compTaskList = this.state.tasks;
-    
-      //   const compFiltTask = compTaskList.filter(function (item, index) {
-      //     return item.id == taskId;
-      //   });
-
-      //   compFiltTask.complete = true;
-
-      //   this.setState({
-      //     tasks: compFiltTask
-      //   });
-      } 
-    
-    
-
-  render() {
-
-
-    return ( 
-      // This brings in the Bootstrap and App.css style stuff, the text in turquoise between the div 
-      //sections is the individual component files that are being called eg AppHeader
-      <div id="div1" className="container">
-
-        <div className="row div2">
-          <div className="col-sm-12">
-            <AppHeader />
-          </div>
-        </div>
-        <div className=" row div2">
-          <div className="col-sm-12">
-            {/* This is taking the value from the text entered in the text box, 
-      it's also in NewTask component file */}
-            <NewTask newTaskFunction = {this.newTask} />
-          </div>
-        </div>
-
-        <div className="row div2">
-          <div className="col-sm-12">
-            <TaskTally taskTally={this.state.tasks.length} />
-          </div>
-        </div>
-
-        {
-          // this is looping through the array 'tasks' created in 'state' at the top and then returning
-          // the tasks line by line so we can see them. So 'task' is an individual instance of each record
-          // could be given any name like footPatrol, so 'this' takes the value of whatever particular thing
-          // you are doing
-          this.state.tasks.map( (item, index) => {
-            return <ExistingTasks task={item} key={index} deleteTask={this.deleteTask} //completeTask={this.completeTask} 
-            />
-        })
-        }
-
-      </div>
-    )
-  
   }
+  // creates a function that completes a particular task that's been 
+  // clicked DONE on the ExistingTask component
+  //
+  // completeTask = (taskId) => {
+  //   const compTaskList = this.state.tasks;
+
+  //   const compFiltTask = compTaskList.map(function (item, index) {
+  //     return item.id == taskId;
+  //   });
+
+  //   compFiltTask.complete = true;
+
+  //   this.setState({
+  //     tasks: compFiltTask
+  //   });
+
+
+
+
+render() {
+
+
+  return (
+    // This brings in the Bootstrap and App.css style stuff, the text in turquoise between the div 
+    //sections is the individual component files that are being called eg AppHeader
+    <div id="div1" className="container">
+
+      <div className="row div2">
+        <div className="col-sm-12">
+          <AppHeader />
+        </div>
+      </div>
+      <div className=" row div2">
+        <div className="col-sm-12">
+          {/* This is taking the value from the text entered in the text box, 
+      it's also in NewTask component file */}
+          <NewTask newTaskFunction={this.newTask} />
+        </div>
+      </div>
+
+      <div className="row div2">
+        <div className="col-sm-12">
+          <TaskTally taskTally={this.state.tasks.length} />
+        </div>
+      </div>
+
+
+      // this is looping through the array 'tasks' created in 'state' at the top and then returning
+      // the tasks line by line so we can see them. So 'task' is an individual instance of each record
+      // could be given any name like footPatrol, so 'this' takes the value of whatever particular thing
+      // you are doing
+      {
+        this.state.tasks.map((item, index) => {
+          return <ExistingTasks task={item} key={index} deleteTask={this.deleteTask}
+          //completeTask={this.completeTask} 
+          />
+        })
+      }
+
+    </div>
+  )
+} 
+}
 
 
 export default App;
