@@ -51,20 +51,25 @@ class App extends Component {
   // creates a function that completes a particular task that's been 
   // clicked DONE on the ExistingTask component
   //
-  // completeTask = (taskId) => {
-  //   const compTaskList = this.state.tasks;
+  completeTask = (taskId) => {
+    const compTaskList = this.state.tasks;
 
-  //   const compFiltTask = compTaskList.map(function (item, index) {
-  //     return item.id == taskId;
-  //   });
-
+     const updatedTask = compTaskList.map(function (item, index) {
+       if (item.id == taskId ) {
+              return item.complete = true;
+       } else {
+         return item.complete = false;
+       }
+  
+     });
+    
   //   compFiltTask.complete = true;
 
-  //   this.setState({
-  //     tasks: compFiltTask
-  //   });
+   this.setState({
+      tasks: updatedTask
+     });
 
-
+};
 
 
 render() {
@@ -95,14 +100,13 @@ render() {
       </div>
 
 
-      // this is looping through the array 'tasks' created in 'state' at the top and then returning
+      {/* // this is looping through the array 'tasks' created in 'state' at the top and then returning
       // the tasks line by line so we can see them. So 'task' is an individual instance of each record
       // could be given any name like footPatrol, so 'this' takes the value of whatever particular thing
-      // you are doing
+      // you are doing */}
       {
         this.state.tasks.map((item, index) => {
-          return <ExistingTasks task={item} key={index} deleteTask={this.deleteTask}
-          //completeTask={this.completeTask} 
+          return <ExistingTasks task={item} key={index} deleteTask={this.deleteTask} completeTask={this.completeTask} 
           />
         })
       }
