@@ -51,18 +51,20 @@ class App extends Component {
     // creates a function that completes a particular task when it's been 
     // clicked on the ExistingTask component
       //
-      completeTask = (taskId) => {
-        const compTaskList = this.state.tasks;
+      // completeTask = (taskId) => {
+      //   const compTaskList = this.state.tasks;
     
-        const compFiltTask = compTaskList.filter(function (item, index) {
-          return item.id == taskId;
-        });
-        compFiltTask.complete = true;
-        this.setState({
-          tasks: compFiltTask
-        });
+      //   const compFiltTask = compTaskList.filter(function (item, index) {
+      //     return item.id == taskId;
+      //   });
+
+      //   compFiltTask.complete = true;
+
+      //   this.setState({
+      //     tasks: compFiltTask
+      //   });
       } 
-    }
+    
     
 
   render() {
@@ -100,11 +102,12 @@ class App extends Component {
           this.state.tasks.map( (item, index) => {
             return <ExistingTasks task={item} key={index} deleteTask={this.deleteTask} //completeTask={this.completeTask} 
             />
-        });
+        })
         }
 
       </div>
     )
+  
   }
 
 
