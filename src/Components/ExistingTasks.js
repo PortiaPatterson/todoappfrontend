@@ -10,7 +10,7 @@ class ExistingTasks extends Component {
                 <div className="col-sm-12 col-md-6">
                     {/* this displays any task details given */}
                     {this.props.task.currentTaskDescr}
-                    {/* -{this.props.task.completed ? "Yes":"No"} */} 
+                    {/* -{this.props.task.completed ? "Yes":"No"}  */}
                 </div>
                 <div className="col-sm-6 col-md-3">
                 {/* this passes the id of the record to be completed to the completeTask function 

@@ -56,14 +56,13 @@ class App extends Component {
 
      const updatedTask = compTaskList.map(function (item, index) {
        if (item.id == taskId ) {
-              return item.complete = true;
+              return item.completed = true;
        } else {
-         return item.complete = false;
+         return item;
        }
   
      });
-    
-  //   compFiltTask.complete = true;
+  
 
    this.setState({
       tasks: updatedTask
