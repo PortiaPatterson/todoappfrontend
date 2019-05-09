@@ -26,8 +26,9 @@ class ExistingTasks extends Component {
                 <div className="col-sm-6 col-md-3" >
                 {/* this will take the id value from the task chosen to be deleted and 
                 // then pass it to the App component so it is filtered out when the looping
-                // is done to delete a particular task */}
-                    <button type="button" onClick ={() => this.props.deleteTask(this.props.task.id)}>DELETE</button>
+                // is done to delete a particular task. You must pass any data u require to the function
+                explicitly eg this.props.deleteTask(this.props.task.id, this.props.task.currentTaskDescr */}
+                    <button type="button" onClick ={() => this.props.deleteTask(this.props.task.id, this.props.task.currentTaskDescr)}>DELETE</button>
                 </div>
 
             </div>

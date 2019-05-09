@@ -46,7 +46,7 @@ body {
 
 /* this is used to strikethrough completed tasks */
 .completed{
-  text-decoration: line-through;
+  text-decoration: line-through red;
   color: blue;
 }
 

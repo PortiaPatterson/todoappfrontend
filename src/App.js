@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // These files are imported from the components folder
 import AppHeader from './Components/AppHeader';
 import NewTask from './Components/NewTask';
-import ExistingTasks from './Components/ExistingTasks';
+import ExistingTask from './Components/ExistingTask';
 import TaskTally from './Components/TaskTally';
 //This file is the CSS styling file that holds all the formatting details
 import './App.css';
@@ -45,7 +45,10 @@ class App extends Component {
   // deleteTask={this.deleteTask}, and this sends the outcome of whatever happened in deleteTask function
   // to the DELETE button section where it uses this code when the DELETE button is clicked
   // onClick ={() => this.props.deleteTask(this.props.task.id)}
-  deleteTask = (taskId) => {
+  deleteTask = (taskId, currentTaskDescr) => {
+    // this checks if you really want to delete the data and only goes ahead with the delete if you do
+    const shouldDelete = window.confirm(`Are you sure you want to delete?  ${currentTaskDescr}`);
+    if (shouldDelete === true){
     
     // this creates a new array that is populated with the data provided from the filter function
     const filteredTask = this.state.tasks.filter(function (item, index) {
@@ -55,6 +58,7 @@ class App extends Component {
     this.setState({
       tasks: filteredTask
     });
+  }
   }
   // creates a function that completes a particular task that's been 
   // clicked DONE on the ExistingTask component
@@ -112,10 +116,14 @@ render() {
       {/* // this is looping through the array 'tasks' created in 'state' at the top and then returning
       // the tasks line by line so we can see them. So 'task' is an individual instance of each record
       // could be given any name like footPatrol, so 'this' takes the value of whatever particular thing
-      // you are doing */}
+      // you are doing. Remember when you see completeTask={this.completeTask}, the 1st completeTask 
+      is the prop name or reference for the completeTask function which is enclosed in the brackets
+      and has to be prefixed by this. so we get the right instance of the record*/}
+      {/*Remember the ExistingTask component ONLY renders one instance of the array at a time; it onlu
+      shows 1 line of data at time  */}
       {
         this.state.tasks.map((item, index) => {
-          return <ExistingTasks task={item} key={index} deleteTask={this.deleteTask} completeTask={this.completeTask} 
+          return <ExistingTask task={item} key={index} deleteTask={this.deleteTask} completeTask={this.completeTask} 
           />
         })
       }
