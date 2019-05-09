@@ -39,6 +39,17 @@ body {
   text-align: centre; 
 }
 
+/* this is used to show which tasks are yet to be completed */
+.notcompleted{
+  color:red;
+}
+
+/* this is used to strikethrough completed tasks */
+.completed{
+  text-decoration: strike-through;
+  color: blue;
+}
+
 /* Defining an id that will only be used to display the document across different device sizes  */
 .my-div{
   border: 1px solid white;

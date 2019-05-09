@@ -32,7 +32,7 @@ class App extends Component {
     };
 
     existingTaskList.push(currentTask);
-
+    // change the data according to what ive just stated above
     this.setState({ tasks: existingTaskList });
   }
 
@@ -55,14 +55,15 @@ class App extends Component {
     const compTaskList = this.state.tasks;
 
      const updatedTask = compTaskList.map(function (item, index) {
-       if (item.id == taskId ) {
-              return item.completed = true;
+       if (item.id === taskId ) {
+              item.completed = true;
+              return item;
        } else {
          return item;
        }
   
      });
-  
+     console.log(updatedTask);
 
    this.setState({
       tasks: updatedTask
