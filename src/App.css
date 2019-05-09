@@ -41,12 +41,19 @@ body {
 
 /* this is used to show which tasks are yet to be completed */
 .notcompleted{
-  color:rgb(223, 239, 240);
+  color:white;
+  font-weight: bold;
+}
+
+/* this is used to capitalize all words typed into New Task Box */
+.capitalise{
+  text-transform: capitalize;
 }
 
 /* this is used to strikethrough completed tasks */
 .completed{
   text-decoration: line-through red;
+  font-weight: bold;
   color: blue;
 }
 
