@@ -13,8 +13,8 @@ class ExistingTasks extends Component {
                     use the style class .completed which is defined in App.css to set the text to red and 
                     strike-through it if the task has been completed i.e. it's true 
                     and whatever's in the 2nd option if it's false */}
-                    <p className ={this.props.task.completed ? "completed":"No"}>{this.props.task.currentTaskDescr}</p>
-                    {/* -{this.props.task.completed ? "Yes":"No"}  */}
+                    <p className ={this.props.task.completed ? "completed":"notcompleted"}> {this.props.task.currentTaskDescr}</p>
+                    
                 </div>
                 <div className="col-sm-6 col-md-3">
                 {/* this passes the id of the record to be completed to the completeTask function 

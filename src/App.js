@@ -11,7 +11,8 @@ import uuidv1 from 'uuid/v1';
 import { PassThrough } from 'stream';
 
 class App extends Component {
-  // this code allows the New Task details added in the NewTask component to be displayed here
+  // this code tells React that we will be using and managing data, and that we will be putting it 
+  // into an array called tasks.
   state = {
     tasks: []
   }
@@ -24,7 +25,8 @@ class App extends Component {
     // this allows us to hold a unique number for each task
     const taskId = uuidv1();
 
-    // this 
+    // this describes what an individual instance of something in the currentTask array 
+    // should look like
     const currentTask = {
       currentTaskDescr: newTaskText,
       id: taskId,
@@ -32,15 +34,21 @@ class App extends Component {
     };
 
     existingTaskList.push(currentTask);
+
     // change the data according to what ive just stated above
     this.setState({ tasks: existingTaskList });
   }
 
-  // creates a function to delete a particular task
+  // creates a function to delete a particular task,the detail from this is referred to in the
+  // Render section below where it sends a prop called deleteTask(which is really a reference to the 
+  // deleteTask function described below) to the ExistingTask component by using the code
+  // deleteTask={this.deleteTask}, and this sends the outcome of whatever happened in deleteTask function
+  // to the DELETE button section where it uses this code when the DELETE button is clicked
+  // onClick ={() => this.props.deleteTask(this.props.task.id)}
   deleteTask = (taskId) => {
-    const currentTaskList = this.state.tasks;
-
-    const filteredTask = currentTaskList.filter(function (item, index) {
+    
+    // this creates a new array that is populated with the data provided from the filter function
+    const filteredTask = this.state.tasks.filter(function (item, index) {
       return item.id !== taskId;
     });
 
@@ -50,11 +58,12 @@ class App extends Component {
   }
   // creates a function that completes a particular task that's been 
   // clicked DONE on the ExistingTask component
-  //
+  
   completeTask = (taskId) => {
-    const compTaskList = this.state.tasks;
-
-     const updatedTask = compTaskList.map(function (item, index) {
+    // this needs to return the whole individual record not just a part so although you check that 
+    // complete part has been ticked, you MUST SEND THE WHOLE RECORD so that it can be added a record
+    // to the new array, updatedTask which is created by the .map transformation
+     const updatedTask = this.state.tasks.map(function (item, index) {
        if (item.id === taskId ) {
               item.completed = true;
               return item;

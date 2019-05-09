@@ -41,12 +41,12 @@ body {
 
 /* this is used to show which tasks are yet to be completed */
 .notcompleted{
-  color:red;
+  color:rgb(223, 239, 240);
 }
 
 /* this is used to strikethrough completed tasks */
 .completed{
-  text-decoration: strike-through;
+  text-decoration: line-through;
   color: blue;
 }
 
@@ -64,6 +64,7 @@ body {
 /* aligns any text to the left */
 .myleft-div{
   text-align: left;
+  padding-top:10px;
 }
 
 /* This text will change your background colour dependent on 
