@@ -30,7 +30,8 @@ class App extends Component {
     const currentTask = {
       currentTaskDescr: newTaskText,
       id: taskId,
-      completed: false
+      completed: false,
+      date:"01-01-2019"
     };
 
     existingTaskList.push(currentTask);
@@ -123,7 +124,15 @@ render() {
       shows 1 line of data at time  */}
       {
         this.state.tasks.map((item, index) => {
-          return <ExistingTask task={item} key={index} deleteTask={this.deleteTask} completeTask={this.completeTask} 
+          return <ExistingTask 
+          currentTaskDescr={item.currentTaskDescr} 
+          id={task.id}
+          key={index} 
+          completed = {item.completed}
+          date={item.date} 
+          deleteTask={this.deleteTask} 
+          completeTask={this.completeTask} 
+          
           />
         })
       }
