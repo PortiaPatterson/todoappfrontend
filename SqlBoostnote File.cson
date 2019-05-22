@@ -1,0 +1,52 @@
+createdAt: "2019-05-22T03:32:21.685Z"
+updatedAt: "2019-05-22T03:51:22.090Z"
+type: "MARKDOWN_NOTE"
+folder: "8b237899452869953ab1"
+title: "CREATE DATABASE PPToDoApp;"
+tags: [
+  "SqlWork"
+]
+content: '''
+  CREATE DATABASE PPToDoApp;
+  
+  show databases;
+  
+  use PPToDoApp;
+  
+  Creating the User Table:
+  CREATE TABLE User (userID INT NOT NULL AUTO_INCREMENT, username VARCHAR (255) NOT NULL, PRIMARY KEY(userID));
+  
+  DESCRIBE User;
+  
+  Creating the Task Table:
+  CREATE TABLE Task (taskId INT NOT NULL AUTO_INCREMENT, description VARCHAR(255) NOT NULL, completed BOOLEAN, userId INT, PRIMARY KEY (taskId), FOREIGN KEY (userId) REFERENCES User(userID));
+  
+  Inserting Values into the User Table;
+  INSERT INTO User (username) VALUES ("susan@bbc.co.uk"), ("geoff@bbc.co.uk");
+  
+  select * from User;
+  
+  Inserting Values into the Task Table:
+  INSERT INTO Task (description, completed, userId) VALUES ("Learn JavaScript", false, 2), ("Learn MySql", false, 2);
+  
+  INSERT INTO Task (description, completed, userId) VALUES ("Learn NodeJS", false, 1);
+  
+  Geoff's work:
+  select * from Task where userId = 2;
+  
+  Sue's work:
+  select * from Task where userId = 1;
+  
+  Extra bit of selection to see how prefixing fields in the select clause affects output
+  
+  select taskId, description, completed, Task.userId, User.username from Task JOIN User ON Task.userId = User.userID WHERE User.userID = 1;
+  
+  Updating Geoff's work to show he completed Learn JavaScript:
+  UPDATE Task SET completed = true WHERE description = "Learn JavaScript" AND userId = 2;
+  
+  Updating Geoff's work to show the work he needs to complete:
+  SELECT * FROM Task WHERE completed = false AND userId = 2;
+'''
+linesHighlighted: []
+isStarred: false
+isTrashed: false

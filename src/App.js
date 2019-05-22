@@ -115,18 +115,18 @@ render() {
 
 
       {/* // this is looping through the array 'tasks' created in 'state' at the top and then returning
-      // the tasks line by line so we can see them. So 'task' is an individual instance of each record
+      // the tasks line by line so we can see them. So 'task' or 'item' is an individual instance of each record
       // could be given any name like footPatrol, so 'this' takes the value of whatever particular thing
       // you are doing. Remember when you see completeTask={this.completeTask}, the 1st completeTask 
       is the prop name or reference for the completeTask function which is enclosed in the brackets
       and has to be prefixed by this. so we get the right instance of the record*/}
-      {/*Remember the ExistingTask component ONLY renders one instance of the array at a time; it onlu
+      {/*Remember the ExistingTask component ONLY renders one instance of the array at a time; it only
       shows 1 line of data at time  */}
       {
         this.state.tasks.map((item, index) => {
           return <ExistingTask 
           currentTaskDescr={item.currentTaskDescr} 
-          id={task.id}
+          id={item.id}
           key={index} 
           completed = {item.completed}
           date={item.date} 
